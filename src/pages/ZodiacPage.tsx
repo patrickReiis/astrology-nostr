@@ -332,9 +332,12 @@ const zodiacSigns: Record<string, ZodiacSign[]> = {
 
 export function ZodiacPage() {
   const currentDate = new Date();
-  const currentMonth = currentDate.toLocaleString('default', { month: 'long' });
+  // Always use English for month keys to match zodiacSigns object
+  const currentMonthEnglish = currentDate.toLocaleString('en-US', { month: 'long' });
+  // Use user's locale for display
+  const currentMonthDisplay = currentDate.toLocaleString('default', { month: 'long' });
   const currentDay = currentDate.getDate();
-  const signs = zodiacSigns[currentMonth] || [];
+  const signs = zodiacSigns[currentMonthEnglish] || [];
 
   // Determine which sign is currently active based on the date
   const getCurrentSign = () => {
@@ -366,7 +369,7 @@ export function ZodiacPage() {
       <div className="text-center mb-8">
         <h1 className="text-4xl font-bold mb-4 flex items-center justify-center gap-2">
           <Calendar className="h-8 w-8" />
-          {currentMonth} Zodiac Signs
+          {currentMonthDisplay} Zodiac Signs
         </h1>
         <p className="text-lg text-muted-foreground">
           Today is {currentDate.toLocaleDateString('default', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' })}
