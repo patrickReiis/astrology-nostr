@@ -1,6 +1,6 @@
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Calendar, Star, Sparkles } from "lucide-react";
+import { Calendar, Star, Sparkles, Telescope } from "lucide-react";
 
 interface ZodiacSign {
   name: string;
@@ -330,6 +330,154 @@ const zodiacSigns: Record<string, ZodiacSign[]> = {
   ]
 };
 
+// Complete list of all 12 zodiac signs for the "All Signs" section
+const allZodiacSigns: ZodiacSign[] = [
+  {
+    name: "Aries",
+    symbol: "♈",
+    element: "Fire",
+    quality: "Cardinal",
+    rulingPlanet: "Mars",
+    dateRange: "March 21 - April 19",
+    traits: ["Courageous", "Determined", "Confident", "Enthusiastic"],
+    strengths: ["Courageous", "Determined", "Confident", "Enthusiastic", "Optimistic", "Honest"],
+    weaknesses: ["Impatient", "Moody", "Short-tempered", "Impulsive", "Aggressive"],
+    description: "As the first sign in the zodiac, the presence of Aries always marks the beginning of something energetic and turbulent. They are continuously looking for dynamic, speed and competition, always being the first in everything."
+  },
+  {
+    name: "Taurus",
+    symbol: "♉",
+    element: "Earth",
+    quality: "Fixed",
+    rulingPlanet: "Venus",
+    dateRange: "April 20 - May 20",
+    traits: ["Reliable", "Patient", "Practical", "Devoted"],
+    strengths: ["Reliable", "Patient", "Practical", "Devoted", "Responsible", "Stable"],
+    weaknesses: ["Stubborn", "Possessive", "Uncompromising"],
+    description: "Practical and well-grounded, Taurus is the sign that harvests the fruits of labor. They feel the need to always be surrounded by love and beauty, turned to the material world, hedonism, and physical pleasures."
+  },
+  {
+    name: "Gemini",
+    symbol: "♊",
+    element: "Air",
+    quality: "Mutable",
+    rulingPlanet: "Mercury",
+    dateRange: "May 21 - June 20",
+    traits: ["Gentle", "Affectionate", "Curious", "Adaptable"],
+    strengths: ["Gentle", "Affectionate", "Curious", "Adaptable", "Quick learner"],
+    weaknesses: ["Nervous", "Inconsistent", "Indecisive"],
+    description: "Expressive and quick-witted, Gemini represents two different personalities in one and you will never be sure which one you will face. They are sociable, communicative and ready for fun, with a tendency to suddenly get serious, thoughtful and restless."
+  },
+  {
+    name: "Cancer",
+    symbol: "♋",
+    element: "Water",
+    quality: "Cardinal",
+    rulingPlanet: "Moon",
+    dateRange: "June 21 - July 22",
+    traits: ["Tenacious", "Highly imaginative", "Loyal", "Emotional"],
+    strengths: ["Tenacious", "Highly imaginative", "Loyal", "Emotional", "Sympathetic", "Persuasive"],
+    weaknesses: ["Moody", "Pessimistic", "Suspicious", "Manipulative", "Insecure"],
+    description: "Deeply intuitive and sentimental, Cancer can be one of the most challenging zodiac signs to get to know. They are very emotional and sensitive, and care deeply about matters of the family and their home."
+  },
+  {
+    name: "Leo",
+    symbol: "♌",
+    element: "Fire",
+    quality: "Fixed",
+    rulingPlanet: "Sun",
+    dateRange: "July 23 - August 22",
+    traits: ["Creative", "Passionate", "Generous", "Warm-hearted"],
+    strengths: ["Creative", "Passionate", "Generous", "Warm-hearted", "Cheerful", "Humorous"],
+    weaknesses: ["Arrogant", "Stubborn", "Self-centered", "Lazy", "Inflexible"],
+    description: "People born under the sign of Leo are natural born leaders. They are dramatic, creative, self-confident, dominant and extremely difficult to resist, able to achieve anything they want to in any area of life they commit to."
+  },
+  {
+    name: "Virgo",
+    symbol: "♍",
+    element: "Earth",
+    quality: "Mutable",
+    rulingPlanet: "Mercury",
+    dateRange: "August 23 - September 22",
+    traits: ["Loyal", "Analytical", "Kind", "Hardworking"],
+    strengths: ["Loyal", "Analytical", "Kind", "Hardworking", "Practical"],
+    weaknesses: ["Shyness", "Worry", "Overly critical", "All work and no play"],
+    description: "Virgos are always paying attention to the smallest details and their deep sense of humanity makes them one of the most careful signs of the zodiac. Their methodical approach to life ensures that nothing is left to chance."
+  },
+  {
+    name: "Libra",
+    symbol: "♎",
+    element: "Air",
+    quality: "Cardinal",
+    rulingPlanet: "Venus",
+    dateRange: "September 23 - October 22",
+    traits: ["Cooperative", "Diplomatic", "Gracious", "Fair-minded"],
+    strengths: ["Cooperative", "Diplomatic", "Gracious", "Fair-minded", "Social"],
+    weaknesses: ["Indecisive", "Avoids confrontations", "Self-pity", "Carries grudges"],
+    description: "People born under the sign of Libra are peaceful, fair, and they hate being alone. Partnership is very important for them, seeking someone with the ability to be the mirror to themselves."
+  },
+  {
+    name: "Scorpio",
+    symbol: "♏",
+    element: "Water",
+    quality: "Fixed",
+    rulingPlanet: "Pluto",
+    dateRange: "October 23 - November 21",
+    traits: ["Resourceful", "Brave", "Passionate", "Stubborn"],
+    strengths: ["Resourceful", "Brave", "Passionate", "Stubborn", "True friend"],
+    weaknesses: ["Distrusting", "Jealous", "Secretive", "Violent"],
+    description: "Scorpio-born are passionate and assertive people. They are determined and decisive, and will research until they find out the truth. Scorpio is a great leader, always aware of the situation and also features prominently in resourcefulness."
+  },
+  {
+    name: "Sagittarius",
+    symbol: "♐",
+    element: "Fire",
+    quality: "Mutable",
+    rulingPlanet: "Jupiter",
+    dateRange: "November 22 - December 21",
+    traits: ["Generous", "Idealistic", "Great sense of humor"],
+    strengths: ["Generous", "Idealistic", "Great sense of humor"],
+    weaknesses: ["Promises more than can deliver", "Very impatient", "Will say anything"],
+    description: "Curious and energetic, Sagittarius is one of the biggest travelers among all zodiac signs. Their open mind and philosophical view motivates them to wander around the world in search of the meaning of life."
+  },
+  {
+    name: "Capricorn",
+    symbol: "♑",
+    element: "Earth",
+    quality: "Cardinal",
+    rulingPlanet: "Saturn",
+    dateRange: "December 22 - January 19",
+    traits: ["Ambitious", "Disciplined", "Patient", "Responsible"],
+    strengths: ["Self-control", "Good managers", "Disciplined", "Responsible"],
+    weaknesses: ["Know-it-all", "Unforgiving", "Condescending", "Expecting the worst"],
+    description: "Capricorn is a sign that represents time and responsibility. Its representatives are traditional and often very serious by nature. These individuals possess an inner state of independence that enables significant progress both in their personal and professional lives."
+  },
+  {
+    name: "Aquarius",
+    symbol: "♒",
+    element: "Air",
+    quality: "Fixed",
+    rulingPlanet: "Uranus",
+    dateRange: "January 20 - February 18",
+    traits: ["Progressive", "Original", "Independent", "Humanitarian"],
+    strengths: ["Progressive", "Original", "Independent", "Humanitarian"],
+    weaknesses: ["Runs from emotional expression", "Temperamental", "Uncompromising", "Aloof"],
+    description: "Aquarius-born are shy and quiet, but on the other hand they can be eccentric and energetic. However, in both cases, they are deep thinkers and highly intellectual people who love helping others."
+  },
+  {
+    name: "Pisces",
+    symbol: "♓",
+    element: "Water",
+    quality: "Mutable",
+    rulingPlanet: "Neptune",
+    dateRange: "February 19 - March 20",
+    traits: ["Compassionate", "Artistic", "Intuitive", "Gentle"],
+    strengths: ["Compassionate", "Artistic", "Intuitive", "Gentle", "Wise", "Musical"],
+    weaknesses: ["Fearful", "Overly trusting", "Sad", "Desire to escape reality"],
+    description: "Pisces are very friendly and often find themselves in company of very different people. They are selfless and always willing to help others, a very fine intent for as long as they don't expect anything in return."
+  }
+];
+
 export function ZodiacPage() {
   const currentDate = new Date();
   // Always use English for month keys to match zodiacSigns object
@@ -339,17 +487,48 @@ export function ZodiacPage() {
   const currentDay = currentDate.getDate();
   const signs = zodiacSigns[currentMonthEnglish] || [];
 
-  // Determine which sign is currently active based on the date
-  const getCurrentSign = () => {
-    if (signs.length === 0) return null;
+  // Function to determine the current zodiac sign based on the current date
+  const getCurrentSign = (): ZodiacSign | null => {
+    const month = currentDate.getMonth() + 1; // JavaScript months are 0-indexed
+    const day = currentDate.getDate();
     
-    // For months with two signs, check the date
-    if (signs.length === 2) {
-      const firstSignEndDay = parseInt(signs[0].dateRange.split(' - ')[1].split(' ')[1]);
-      return currentDay <= firstSignEndDay ? signs[0] : signs[1];
+    // Find the current sign from all zodiac signs based on date ranges
+    for (const sign of allZodiacSigns) {
+      const [startRange, endRange] = sign.dateRange.split(' - ');
+      
+      // Parse start date
+      const [startMonth, startDay] = parseDate(startRange);
+      // Parse end date
+      const [endMonth, endDay] = parseDate(endRange);
+      
+      // Handle year boundary cases (e.g., Capricorn: Dec 22 - Jan 19)
+      if (startMonth > endMonth) {
+        // Year boundary case
+        if ((month === startMonth && day >= startDay) || (month === endMonth && day <= endDay)) {
+          return sign;
+        }
+      } else {
+        // Normal case (within same year)
+        if ((month === startMonth && day >= startDay) || 
+            (month > startMonth && month < endMonth) || 
+            (month === endMonth && day <= endDay)) {
+          return sign;
+        }
+      }
     }
     
-    return signs[0];
+    return null;
+  };
+
+  // Helper function to parse date strings like "March 21" or "January 19"
+  const parseDate = (dateStr: string): [number, number] => {
+    const [monthStr, dayStr] = dateStr.trim().split(' ');
+    const monthMap: Record<string, number> = {
+      'January': 1, 'February': 2, 'March': 3, 'April': 4,
+      'May': 5, 'June': 6, 'July': 7, 'August': 8,
+      'September': 9, 'October': 10, 'November': 11, 'December': 12
+    };
+    return [monthMap[monthStr], parseInt(dayStr)];
   };
 
   const currentSign = getCurrentSign();
@@ -468,6 +647,86 @@ export function ZodiacPage() {
             </CardContent>
           </Card>
         ))}
+      </div>
+
+      {/* All Zodiac Signs Section */}
+      <div className="mt-12">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold mb-4 flex items-center justify-center gap-2">
+            <Telescope className="h-7 w-7" />
+            All Zodiac Signs
+          </h2>
+          <p className="text-muted-foreground max-w-2xl mx-auto">
+            Explore all 12 zodiac signs to discover the characteristics, traits, and insights of each astrological sign. 
+            Perfect for learning about yourself, friends, family, or simply satisfying your curiosity about astrology.
+          </p>
+        </div>
+
+        <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {allZodiacSigns.map((sign, index) => (
+            <Card key={index} className={currentSign?.name === sign.name ? "ring-2 ring-primary" : ""}>
+              <CardHeader>
+                <div className="flex items-center justify-between">
+                  <CardTitle className="text-lg flex items-center gap-2">
+                    {sign.name}
+                    {currentSign?.name === sign.name && (
+                      <Sparkles className="h-4 w-4 text-yellow-500" />
+                    )}
+                  </CardTitle>
+                  <span className="text-2xl">{sign.symbol}</span>
+                </div>
+                <CardDescription className="text-sm">{sign.dateRange}</CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="space-y-3">
+                  <div className="flex items-center gap-2">
+                    <Badge className={getElementColor(sign.element)}>{sign.element}</Badge>
+                    <Badge variant="outline">{sign.quality}</Badge>
+                    <Badge variant="secondary">{sign.rulingPlanet}</Badge>
+                  </div>
+
+                  <p className="text-sm leading-relaxed">{sign.description}</p>
+
+                  <div>
+                    <h4 className="font-semibold mb-2 text-sm">Key Traits</h4>
+                    <div className="flex flex-wrap gap-1">
+                      {sign.traits.slice(0, 4).map((trait, i) => (
+                        <Badge key={i} variant="outline" className="text-xs">
+                          {trait}
+                        </Badge>
+                      ))}
+                    </div>
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-3">
+                    <div>
+                      <h4 className="font-semibold mb-1 text-xs text-green-600 dark:text-green-400">Strengths</h4>
+                      <ul className="text-xs space-y-0.5">
+                        {sign.strengths.slice(0, 3).map((strength, i) => (
+                          <li key={i} className="flex items-start gap-1">
+                            <span className="text-green-600 dark:text-green-400">•</span>
+                            <span className="leading-tight">{strength}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold mb-1 text-xs text-red-600 dark:text-red-400">Weaknesses</h4>
+                      <ul className="text-xs space-y-0.5">
+                        {sign.weaknesses.slice(0, 3).map((weakness, i) => (
+                          <li key={i} className="flex items-start gap-1">
+                            <span className="text-red-600 dark:text-red-400">•</span>
+                            <span className="leading-tight">{weakness}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
       </div>
     </div>
   );
